@@ -1,12 +1,10 @@
 #!/usr/bin/env/ python3
 
 import unittest
-import os
 from src.room import *
 from src.map import *
 
-id = 1
-num_of_rooms = 5
+
 
 
 
@@ -21,8 +19,10 @@ class RoomAttributesTestCase(unittest.TestCase):
         Uses build map function from map.py to build multiple rooms for testing
         purposes
         """
+        id = 1
+        num_of_rooms = 5
 
-        
+
 
         cls.map = Map(build_map(id, num_of_rooms))
 

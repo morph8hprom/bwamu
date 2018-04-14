@@ -5,8 +5,7 @@ import os
 from src.world import *
 from src.map import *
 from src.room import *
-start_id = 1
-num_of_rooms = 5
+
 
 
 class WorldAttributeTestCase(unittest.TestCase):
@@ -18,6 +17,8 @@ class WorldAttributeTestCase(unittest.TestCase):
         """
         Uses build_world function to create world data
         """
+        start_id = 1
+        num_of_rooms = 5
 
 
         cls.map = Map(build_map(start_id, num_of_rooms))
