@@ -11,5 +11,12 @@ class Dungeon():
                  self._map = map
 
     def _update_map(self):
+        """
+        Creates instance of DungeonMap using id of Dungeon
+        and calls function to update rooms.
+        Should only be used ONCE
+        """
+        # Creates an instance of DungeonMap using the id of Dungeon
         self._map = dun_map.DungeonMap(self._id)
+        # Calls function to update rooms
         self._map._update_rooms()
