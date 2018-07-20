@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-
+from bwamu import area
 from gim import shop_dict as Sd
 
-class Shop():
-    def __init__(self, id = '1', name = 'test name', shopkeeper = None, items = [], stock = None):
-        self._id = id
-        self._name = name
+class Shop(area.Area):
+    def __init__(self, id = '1', name = 'test name', desc = 'test desc',
+                area_type = 'Shop', shopkeeper = None,
+                items = [], stock = None):
+        super().__init__(id, name, desc, area_type)
         self._shopkeeper = shopkeeper
         self._items = items
         self._stock = stock

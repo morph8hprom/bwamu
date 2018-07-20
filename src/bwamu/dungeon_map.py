@@ -4,6 +4,10 @@ import json
 from pkg_resources import resource_string
 from bwamu import room as R
 
+"""
+Defines DungeonMap class and related methods
+"""
+
 class DungeonMap():
     def __init__(self, id = '1', rooms = {},
                 start_loc = '1', start_id = 1, num_of_rooms = 5):
