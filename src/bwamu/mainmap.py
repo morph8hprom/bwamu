@@ -4,6 +4,7 @@
 File contains main map object and related methods
 """
 from bwamu import area
+
 class Mainmap():
     def __init__(self, start_id = 1, num_of_areas = 5):
         self._areas = {}

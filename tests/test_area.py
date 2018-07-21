@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
-import unittest
 from gim import shop_dict as Sd
 from bwamu import area
+from bwamu import  area
+import unittest
+
+
 
 class ShopAttributesTestCase(unittest.TestCase):
     """
@@ -39,7 +42,6 @@ class ShopMethodsTestCase(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-
         cls.test_shop = area.Shop()
         cls.test_list = [i for i in range(1,5)]
 
@@ -48,3 +50,50 @@ class ShopMethodsTestCase(unittest.TestCase):
         self.test_shop._items = self.test_list
         self.test_shop._update_stock()
         self.assertIsInstance(self.test_shop._stock, Sd.ShopDict)
+
+
+class DungeonAttributesTestCase(unittest.TestCase):
+    """
+    Contains tests for Dungeon instance attributes
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        """
+        Creates a test instance of Dungeon
+        """
+
+        cls.test_dungeon = area.Dungeon()
+
+    def test_dungeon_has_id(self):
+        att = hasattr(self.test_dungeon, '_id')
+        self.assertTrue(att)
+
+    def test_dungeon_has_name(self):
+        att = hasattr(self.test_dungeon, '_name')
+        self.assertTrue(att)
+
+    def test_dungeon_has_desc(self):
+        att = hasattr(self.test_dungeon, '_desc')
+        self.assertTrue(att)
+
+    def test_dungeon_has_map(self):
+        att = hasattr(self.test_dungeon, '_map')
+        self.assertTrue(att)
+
+class DungeonMethodsTestCase(unittest.TestCase):
+    """
+    Contains tests for Dungeon instance methods
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        """
+        Builds test instance of Dungeon
+        """
+        cls.test_dungeon = area.Dungeon()
+
+    def test_dungeon_update_map(self):
+        self.test_dungeon._update_map()
+        att = self.test_dungeon._map
+        self.assertIsNotNone(att)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from bwamu import dungeon
+from bwamu import  area
 import unittest
 
 class DungeonAttributesTestCase(unittest.TestCase):
@@ -14,7 +14,7 @@ class DungeonAttributesTestCase(unittest.TestCase):
         Creates a test instance of Dungeon
         """
 
-        cls.test_dungeon = dungeon.Dungeon()
+        cls.test_dungeon = area.Dungeon()
 
     def test_dungeon_has_id(self):
         att = hasattr(self.test_dungeon, '_id')
@@ -42,7 +42,7 @@ class DungeonMethodsTestCase(unittest.TestCase):
         """
         Builds test instance of Dungeon
         """
-        cls.test_dungeon = dungeon.Dungeon()
+        cls.test_dungeon = area.Dungeon()
 
     def test_dungeon_update_map(self):
         self.test_dungeon._update_map()
