@@ -2,7 +2,6 @@
 
 from gim import shop_dict as Sd
 from bwamu import area
-from bwamu import  area
 import unittest
 
 

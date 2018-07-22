@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 
 """
-Defines Area class and related methods
+Defines Area class and related methods and subclasses
 """
+import json
+from pkg_resources import resource_string
 from bwamu import dungeon_map as dun_map
+from bwamu import room as R
 from gim import shop_dict as Sd
+
 
 class Area():
     def __init__(self, id = '1', name = 'test name',
@@ -43,3 +47,34 @@ class Dungeon(Area):
         self._map = dun_map.DungeonMap(self._id)
         # Calls function to update rooms
         self._map._update_rooms()
+
+
+
+class DungeonMap():
+    """
+    Defines DungeonMap class and related methods
+    """
+    def __init__(self, id = '1', rooms = {},
+                start_loc = '1', start_id = 1, num_of_rooms = 5):
+        self._id = id
+        self._rooms = rooms
+        self._start_loc = start_loc
+        self._start_id = start_id
+        self._num_of_rooms = num_of_rooms
+
+
+    def _update_rooms(self):
+        d = {}
+        for i in range(self._start_id, self._num_of_rooms + 1):
+            try:
+                d[i] = self._build_room(i)
+            except FileNotFoundError:
+                print("File not found.  Please check to make sure it exists")
+        self._rooms = d
+
+    def _build_room(self, id):
+        jsontext = resource_string(__name__, 'data/dungeon{}/room{}.json'.format(self._id, id))
+        d = json.loads(jsontext.decode('utf-8'))
+        d['id'] = id
+        room = R.Room(**d)
+        return room
