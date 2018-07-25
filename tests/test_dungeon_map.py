@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import unittest
-from bwamu import dungeon_map as dun_map
+from bwamu import area
 from bwamu import room
 
 class TestDungeonMapAttributes(unittest.TestCase):
@@ -14,7 +14,7 @@ class TestDungeonMapAttributes(unittest.TestCase):
         """
         Builds test instance of DungeonMap
         """
-        cls.test_map = dun_map.DungeonMap()
+        cls.test_map = area.DungeonMap()
 
     def test_dungeon_map_has_id(self):
         att = hasattr(self.test_map, '_id')
@@ -36,7 +36,7 @@ class TestDungeonMapMethods(unittest.TestCase):
         """
         Builds test instance of DungeonMap
         """
-        cls.test_map = dun_map.DungeonMap()
+        cls.test_map = area.DungeonMap()
 
     def test_dungeon_map_build_room(self):
         att = self.test_map._build_room(1)

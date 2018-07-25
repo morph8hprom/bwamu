@@ -29,3 +29,4 @@ class Mainmap():
             area = area.Shop(**d)
         elif d['area_type'] == 'Dungeon':
             area = area.Dungeon(**d)
+        return area
