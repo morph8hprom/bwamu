@@ -1,1 +1,1 @@
-{"name" : "test name", "desc" : "test desc", "adj" : [], "area_type" : "Shop"}
+{"name" : "test name", "desc" : "test desc", "adj" : [1,3], "area_type" : "Shop"}

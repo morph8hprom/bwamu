@@ -20,7 +20,7 @@ class Area():
 
     def _adjacent(self, id):
         if id in self.adj:
-            return self.adj[id]
+            return True
         else:
             return None
 
