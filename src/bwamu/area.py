@@ -27,9 +27,9 @@ class Area():
 
 class Shop(Area):
     def __init__(self, id = '1', name = 'test name', desc = 'test desc',
-                area_type = 'Shop', shopkeeper = None,
+                adj = [], area_type = 'Shop', shopkeeper = None,
                 items = [], stock = None):
-        super().__init__(id, name, desc, area_type)
+        super().__init__(id, name, desc, adj, area_type)
         self._shopkeeper = shopkeeper
         self._items = items
         self._stock = stock
@@ -40,8 +40,8 @@ class Shop(Area):
 
 class Dungeon(Area):
     def __init__(self, id = '1', name = 'test name',
-                 desc = 'test desc', area_type = 'Dungeon', map = None):
-                 super().__init__(id, name, desc, area_type)
+                 desc = 'test desc', adj = [], area_type = 'Dungeon', map = None):
+                 super().__init__(id, name, desc, adj, area_type)
                  self.map = map
 
     def _update_map(self):

@@ -6,13 +6,18 @@ File contains main map object and related methods
 from bwamu import area
 
 class Mainmap():
-    def __init__(self, start_id = 1, num_of_areas = 5):
+    def __init__(self, start_id = 1, num_of_areas = 3):
         self._areas = {}
         self._start_loc = None
         self._start_id = start_id
         self._num_of_areas = num_of_areas
 
+
     def _update_areas(self):
+        """
+        Used to build a dictionary of all areas from given directory
+        Should only be used ONCE
+        """
         d = {}
         for i in range(self._start_id, self._num_of_areas + 1):
             try:
