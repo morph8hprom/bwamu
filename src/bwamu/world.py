@@ -23,11 +23,11 @@ class World():
         self.START_LOC = DEFAULT_START_LOC
 
         # Create instance of Mainmap and update areas
-        self.map = mm.Mainmap(self.START_ID, self.NUM_OF_AREAS)
-        self.map._update_areas()
+        self._map = mm.Mainmap(self.START_ID, self.NUM_OF_AREAS)
+        self._map._update_areas()
 
         # Create instance of Itemdict and update all items
-        self.items = id.ItemDict(self.START_ID, self.NUM_OF_ITEMS)
+        self._items = id.ItemDict(self.START_ID, self.NUM_OF_ITEMS)
 
         # Create instance of Chardict and update all characters
-        self.characters = cd.CharacterDict(self.START_ID, self.NUM_OF_CHARS)
+        self._characters = cd.CharacterDict(self.START_ID, self.NUM_OF_CHARS)
