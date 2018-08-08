@@ -51,7 +51,7 @@ class Dungeon(Area):
         Should only be used ONCE
         """
         # Creates an instance of DungeonMap using the id of Dungeon
-        self._map = DungeonMap(self.id)
+        self._map = DungeonMap(self._id)
         # Calls function to update rooms
         self._map._update_rooms()
 
