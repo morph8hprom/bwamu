@@ -12,10 +12,10 @@ from gim import shop_dict as Sd
 class Area():
     def __init__(self, id = '1', name = 'test name',
                 desc = 'test desc', adj = {}, area_type = None):
-        self.id = id
-        self.name = name
-        self.desc = desc
-        self.adj = adj
+        self._id = id
+        self._name = name
+        self._desc = desc
+        self._adj = adj
         self._area_type = area_type
 
     def _adjacent(self, id):
@@ -42,7 +42,7 @@ class Dungeon(Area):
     def __init__(self, id = '1', name = 'test name',
                  desc = 'test desc', adj = [], area_type = 'Dungeon', map = None):
                  super().__init__(id, name, desc, adj, area_type)
-                 self.map = map
+                 self._map = map
 
     def _update_map(self):
         """
@@ -51,9 +51,9 @@ class Dungeon(Area):
         Should only be used ONCE
         """
         # Creates an instance of DungeonMap using the id of Dungeon
-        self.map = DungeonMap(self.id)
+        self._map = DungeonMap(self.id)
         # Calls function to update rooms
-        self.map._update_rooms()
+        self._map._update_rooms()
 
 
 
