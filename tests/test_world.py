@@ -1,36 +1,52 @@
-# #!/usr/bin/env python3
-#
-# import unittest
-# import os
-# from src.world import *
-# from src.map import *
-# from src.room import *
-#
-#
-#
-# class WorldAttributeTestCase(unittest.TestCase):
-#     """
-#     Verifies all attributes of world instance
-#     """
-#     @classmethod
-#     def setUpClass(cls):
-#         """
-#         Uses build_world function to create world data
-#         """
-#         start_id = 1
-#         num_of_rooms = 5
-#
-#
-#         cls.map = Map(build_map(start_id, num_of_rooms))
-#         cls.start_loc = 1
-#         cls.world = build_world(cls.map, cls.start_loc)
-#
-#     def test_world_has_map(self):
-#         att = hasattr(self.world, 'map')
-#         self.assertTrue(att)
-#
-#
-#
-#     def test_world_has_start_loc(self):
-#         att = hasattr(self.world, 'start_loc')
-#         self.assertTrue(att)
+#!/usr/bin/env python3
+
+import unittest
+from bwamu import world as w
+
+"""
+Contains tests for World class
+"""
+
+class WorldAttributesTestCase(unittest.TestCase):
+    """
+    Contains test for World instance attributes
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        """
+        Builds test instance of World using default parameters
+        """
+        cls.test_world = w.World()
+
+    def test_world_has_start_id(self):
+        att = hasattr(self.test_world, 'START_ID')
+        self.assertTrue(att)
+
+    def test_world_has_num_of_areas(self):
+        att = hasattr(self.test_world, 'NUM_OF_AREAS')
+        self.assertTrue(att)
+
+    def test_world_has_num_of_items(self):
+        att = hasattr(self.test_world, 'NUM_OF_ITEMS')
+        self.assertTrue(att)
+
+    def test_world_has_num_of_chars(self):
+        att = hasattr(self.test_world, 'NUM_OF_CHARS')
+        self.assertTrue(att)
+
+    def test_world_has_start_loc(self):
+        att = hasattr(self.test_world, 'START_LOC')
+        self.assertTrue(att)
+
+    def test_world_has_map(self):
+        att = hasattr(self.test_world, '_map')
+        self.assertTrue(att)
+
+    def test_world_has_items(self):
+        att = hasattr(self.test_world, '_items')
+        self.assertTrue(att)
+
+    def test_world_has_characters(self):
+        att = hasattr(self.test_world, '_characters')
+        self.assertTrue(att)
